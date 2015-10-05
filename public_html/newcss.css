@@ -1,0 +1,75 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    background-image: url(images/background.jpg);
+}
+
+h1 {
+    color: #FFFFFF;
+}
+
+#kopf {
+    height: 100px;
+    margin: 10px;
+    background-size: 100% auto;
+    background-image: url(images/banner.jpg);
+}
+#fuss {
+    height: 50px;
+    margin: 10px;
+    background-color: #ff0;
+}
+#mitte {
+    position: relative;
+    width: 100%;
+}
+#inhalt {
+    margin: 0px 180px;
+    background-size: 100% auto;
+    background-image: url(images/backgroundimage.jpg);
+}
+#links {
+    position: absolute;
+    top: 0px;
+    left: 10px;
+    width: 160px;
+    height: 300px;
+    background-color: #fc0;
+}
+#rechts {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    width: 160px;
+    height: 300px;
+    background-color: #fc0;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+}
+
+a.menu:link, a:visited {
+    display: block;
+    width: 120px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 4px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+<!-- Buttons werden Dunkelblau, wenn man mit dem Maus drübergeht -->
+
+a.menu:hover, a.menu:active {
+    background-color: #291984;
+}
+
