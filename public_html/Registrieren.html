@@ -14,22 +14,25 @@
 
     <body>
 
-        <!-- Login-Buttons -->
-        <div id="kopf">    
-            <form action="demo_form.asp" style="text-align: right">
-                <font color="#FFFFFF"> User: <input type="text" name="usrname" size="10">
-                PW: <input type="password" name="usrpw" size="10"></font><br>
-                <a href="Registrieren.html">Registrieren</a>&nbsp;&nbsp;<input type="submit" value="Submit">
-            </form>  
+        <div id="kopf">  
+            <div style="float:left">
+                <!-- Menü Bar, wobei <li> die Elemente listet und <ul> für ungeordnete Liste steht -->
+                <ul>
+                    <li><a class= "menu" href="index.html"><img src="images/home_w.png" alt="Home" height="20" width="20"> Home</a></li>
+                    <li><a class= "menu" href="Warenkorb.html"><img src="images/shop_cart.png" alt="Home" height="20" width="20"> Kaufen</a></li>
+                    <li><a class= "menu" href="MeinProfil.html"><img src="images/show_offliners.png" alt="Home" height="20" width="20"> Profil</a></li>
+                </ul>
+            </div>
 
-            <!-- Menü Bar, wobei <li> die Elemente listet und <ul> für ungeordnete Liste steht -->
+            <div style="float:right">
+                <!-- Login-Buttons -->
 
-            <ul>
-                <li><a class= "menu" href="index.html"><img src="images/home_w.png" alt="Home" height="20" width="20"> Home</a></li>
-                <li><a class= "menu" href="Warenkorb.html"><img src="images/shop_cart.png" alt="Home" height="20" width="20"> Kaufen</a></li>
-                <li><a class= "menu" href="MeinProfil.html"><img src="images/show_offliners.png" alt="Home" height="20" width="20"> Profil</a></li>
-            </ul>
-
+                <form action="demo_form.asp" style="text-align: right">
+                    <font color="#FFFFFF"> User: <input type="text" name="usrname" size="10">
+                    PW: <input type="password" name="usrpw" size="10"></font><br>
+                    <a href="Registrieren.html">Registrieren</a>&nbsp;&nbsp;<input type="submit" value="Submit">
+                </form>  
+            </div>
         </div>
 
         <div id="inhalt">
@@ -58,11 +61,12 @@
                     </tr>
                     <tr>
                         <td>Passwort:</td>
-                        <td><input id="pw1" type="password"></td>
+                        <td><input id="pw1" type="password" pattern=".{6,}"   required title="6 Charactere minimum"></td>
+                        <td><i>mindestens 6 Charaktere</i></td>
                     </tr>
                     <tr>
                         <td>Re-Enter</td>
-                        <td><input id="pw2" type="password"></td>
+                        <td><input id="pw2" type="password" pattern=".{6,}"   required title="6 Charactere minimum"></td>
                     </tr>
                     <tr><td>&nbsp;</td></tr>
                     <tr>
