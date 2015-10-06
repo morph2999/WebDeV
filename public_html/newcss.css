@@ -1,12 +1,17 @@
 body {
     padding: 0px;
     margin: 0px;
+    background-size: cover;
     background-image: url(images/background.jpg);
     background-attachment: fixed;
     background-repeat: no-repeat;
 }
 
 h1 {
+    color: #FFFFFF;
+}
+
+p {
     color: #FFFFFF;
 }
 
@@ -38,7 +43,7 @@ h1 {
     margin-top: 60px;
     margin-bottom: 60px;
     background-size: 100% auto;
-    background-image: url(images/backgroundimage.jpg);
+    background-image: url(images/backgroundinhalt.jpg);
     background-attachment: fixed;
     background-repeat: no-repeat;
 }
