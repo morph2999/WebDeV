@@ -13,18 +13,19 @@ h1 {
 #kopf {
     top: 0px;
     width: 100%;
-    height: 100px;
+    height: 50px;
     background-size: 100% auto;
     background-image: url(images/banner.jpg);
-    position:fixed;
+    position: fixed;
 }
+
 #fuss {
     height: 50px;
     margin: 0px;
     width: 100%;
     background-size: 100% auto;
     background-image: url(images/banner.jpg);
-    position:fixed;
+    position: fixed;
     bottom: 0px;
 }
 #mitte {
@@ -32,7 +33,10 @@ h1 {
     width: 100%;
 }
 #inhalt {
-    margin: 110px 180px;
+    margin-left: 180px;
+    margin-right: 180px;
+    margin-top: 60px;
+    margin-bottom: 60px;
     background-size: 100% auto;
     background-image: url(images/backgroundimage.jpg);
     background-attachment: fixed;
