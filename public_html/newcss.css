@@ -24,6 +24,14 @@ p {
     position: fixed;
 }
 
+#bildmittig {
+   width: 409px; //your image/element width here
+   height: 152px; //your image/element height here
+   overflow: auto;
+   margin: auto;
+   top: 0; left: 0; bottom: 0; right: 0;
+}
+
 #fuss {
     height: 50px;
     margin: 0px;
@@ -47,7 +55,7 @@ p {
     background-attachment: fixed;
     background-repeat: no-repeat;
 }
-    
+
 #links {
     position: absolute;
     top: 0px;
