@@ -84,7 +84,7 @@ li {
     float: left;
 }
 
-a.menu:link, a:visited {
+a.menu:link, a.menu:visited {
     display: block;
     width: 120px;
     font-weight: bold;
@@ -95,9 +95,10 @@ a.menu:link, a:visited {
     text-transform: uppercase;
 }
 
-<!-- Buttons werden Dunkelblau, wenn man mit dem Maus drübergeht -->
+
+/*Markiert die Loginbuttons*/
 
 a.menu:hover, a.menu:active {
-    background-color: #291984;
+    background-color: Blue;
 }
 
