@@ -1,59 +1,49 @@
 body {
-    padding: 0px;
-    margin: 0px;
-    background-size: cover;
-    background-image: url(images/background.jpg);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+    margin: 5px 20px;
+    background-color: lightgrey;
 }
 
-h1 {
-    color: #FFFFFF;
-}
-
-p {
-    color: #FFFFFF;
+a {
+    color: white;
 }
 
 #kopf {
-    top: 0px;
-    width: 100%;
+    margin: auto;
     height: 50px;
-    background-size: 100% auto;
-    background-image: url(images/banner.jpg);
-    position: fixed;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: lightslategray;
 }
 
 #bildmittig {
-   width: 409px; //your image/element width here
-   height: 152px; //your image/element height here
-   overflow: auto;
-   margin: auto;
-   top: 0; left: 0; bottom: 0; right: 0;
+    width: 409px;
+    height: 152px;
+    overflow: auto;
+    margin: auto;
+    top: 0; left: 0; bottom: 0; right: 0;
+}
+
+#mitte {
+    position: relative;
+    width: 100%;
+    margin: 10px;
 }
 
 #fuss {
     height: 50px;
     margin: 0px;
     width: 100%;
-    background-size: 100% auto;
-    background-image: url(images/banner.jpg);
     position: fixed;
     bottom: 0px;
 }
-#mitte {
-    position: relative;
-    width: 100%;
-}
+
 #inhalt {
-    margin-left: 180px;
-    margin-right: 180px;
-    margin-top: 60px;
-    margin-bottom: 60px;
-    background-size: 100% auto;
-    background-image: url(images/backgroundinhalt.jpg);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+    margin: 0px 180px;
+    padding: 20px;
+    border: solid; 
+    border-radius: 10px;
+    border-color: black;
+    background-color: white;
 }
 
 #links {
@@ -95,9 +85,7 @@ a.menu:link, a.menu:visited {
     text-transform: uppercase;
 }
 
-
 /*Markiert die Loginbuttons*/
-
 a.menu:hover, a.menu:active {
     background-color: Blue;
 }

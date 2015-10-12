@@ -34,57 +34,56 @@
                 </form>  
             </div>
         </div>
+        <div id="mitte">
+            <div id="inhalt">
 
-        <div id="inhalt">
+                <h1>Registration</h1>
+                <form  action="" onSubmit="return checkPw(this)">
+                    <table>
+                        <tr>
+                            <td>Vorname:</td>
+                            <td><input id="vname" ></td>
+                        </tr>
+                        <tr>
+                            <td>Nachname:</td>
+                            <td><input id="nname" ></td>
+                        </tr>
 
-            <img src="images/Registration.png">
-            <br>
+                        <tr>
+                            <td>E-Mail:</td>
+                            <td><input id="email" ></td>
+                        </tr>
+                        <tr><td>&nbsp;</td></tr>
+                        <tr>
+                            <td>Benutzername:</td>
+                            <td><input id="user" ></td>
+                        </tr>
+                        <tr>
+                            <td>Passwort:</td>
+                            <td><input id="pw1" type="password" pattern=".{6,}"   required title="6 Charactere minimum"></td>
+                            <td><i>mindestens 6 Charaktere</i></td>
+                        </tr>
+                        <tr>
+                            <td>Re-Enter</td>
+                            <td><input id="pw2" type="password" pattern=".{6,}"   required title="6 Charactere minimum"></td>
+                        </tr>
+                        <tr><td>&nbsp;</td></tr>
+                        <tr>
+                            <td>Männlich</td>
+                            <td><input type="radio" name="geschlecht" id="männl" value="männl"></td>
+                        </tr>
 
-            <form  action="" onSubmit="return checkPw(this)">
-                <table>
-                    <tr>
-                        <td>Vorname:</td>
-                        <td><input id="vname" ></td>
-                    </tr>
-                    <tr>
-                        <td>Nachname:</td>
-                        <td><input id="nname" ></td>
-                    </tr>
+                        <tr>
+                            <td>Weiblich</td>
+                            <td><input type="radio" name="geschlecht" id="weibl" value="weibl"></td>
+                        </tr>
+                        <tr><td>&nbsp;</td></tr>
 
-                    <tr>
-                        <td>E-Mail:</td>
-                        <td><input id="email" ></td>
-                    </tr>
-                    <tr><td>&nbsp;</td></tr>
-                    <tr>
-                        <td>Benutzername:</td>
-                        <td><input id="user" ></td>
-                    </tr>
-                    <tr>
-                        <td>Passwort:</td>
-                        <td><input id="pw1" type="password" pattern=".{6,}"   required title="6 Charactere minimum"></td>
-                        <td><i>mindestens 6 Charaktere</i></td>
-                    </tr>
-                    <tr>
-                        <td>Re-Enter</td>
-                        <td><input id="pw2" type="password" pattern=".{6,}"   required title="6 Charactere minimum"></td>
-                    </tr>
-                    <tr><td>&nbsp;</td></tr>
-                    <tr>
-                        <td>Männlich</td>
-                        <td><input type="radio" name="geschlecht" id="männl" value="männl"></td>
-                    </tr>
-
-                    <tr>
-                        <td>Weiblich</td>
-                        <td><input type="radio" name="geschlecht" id="weibl" value="weibl"></td>
-                    </tr>
-                    <tr><td>&nbsp;</td></tr>
-
-                </table>
-                <input type="submit" value="Submit">
-                <input type="reset" value="Zurücksetzen"> 
-            </form>
+                    </table>
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Zurücksetzen"> 
+                </form>
+            </div>
         </div>
     </body>
 </html>
