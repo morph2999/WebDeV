@@ -17,10 +17,16 @@
         <div id="kopf">  
             <div style="float:left">
                 <!-- Menü Bar, wobei <li> die Elemente listet und <ul> für ungeordnete Liste steht -->
-                <ul>
-                    <li><a class= "menu" href="index.html"><img src="images/home_w.png" alt="Home" height="20" width="20"> Home</a></li>
-                    <li><a class= "menu" href="Warenkorb.html"><img src="images/shop_cart.png" alt="Home" height="20" width="20"> Shop</a></li>
-                    <li><a class= "menu" href="MeinProfil.html"><img src="images/show_offliners.png" alt="Home" height="20" width="20"> Profil</a></li>
+                <ul id="hauptmenue">
+                    <li class="menu"><a class= "menu" href="index.html"><img src="images/home_w.png" alt="Home" height="20" width="20"> Home</a></li>
+                    <li class="menu"><a class= "menu" href="Warenkorb.html"><img src="images/shop_cart.png" alt="Home" height="20" width="20"> Shop</a>
+                        <ul id="untermenue">
+                            <li class="untermenu"><a class= "menu" href="dump.html">Unterpunkt 1</a></li>
+                            <li class="untermenu"><a class= "menu" href="dump.html">Unterpunkt 2</a></li>
+                            <li class="untermenu"><a class= "menu" href="dump.html">Unterpunkt 3</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu"><a class= "menu" href="MeinProfil.html"><img src="images/show_offliners.png" alt="Home" height="20" width="20"> Profil</a></li>
                 </ul>
             </div>
 
@@ -36,6 +42,8 @@
         </div>   
 
         <div id="mitte">
+            <div id="links"></div>
+            <div id="rechts"></div>
             <div id="inhalt">      
 
                 <h1>Mein Profil</h1>

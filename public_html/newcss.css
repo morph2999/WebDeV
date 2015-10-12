@@ -9,10 +9,13 @@ a {
 
 #kopf {
     margin: auto;
+    margin-bottom: 10px;
     height: 40px;
     padding: 10px;
     border-radius: 10px;
     background-color: lightslategray;
+    z-index: 2;
+    position: relative;
 }
 
 #bildmittig {
@@ -24,9 +27,9 @@ a {
 }
 
 #mitte {
+    margin: auto;
     position: relative;
     width: 100%;
-    margin: 10px;
 }
 
 #fuss {
@@ -39,39 +42,71 @@ a {
 
 #inhalt {
     margin: 0px 180px;
+    left: 0px;
+    right: 0px;
     padding: 20px;
+    width: auto;
     border: solid; 
     border-radius: 10px;
-    border-color: black;
+    border-color: grey;
     background-color: white;
+    z-index: 1;
+    position: absolute;
 }
 
 #links {
-    position: absolute;
-    top: 0px;
-    left: 10px;
-    width: 160px;
-    height: 300px;
-    background-color: #fc0;
+    position: absolute ;
+    padding: 20px;
+    top: 0;
+    left: 0;
+    width: 120px;
+    height: 420px;
+    border-radius: 10px;
+    background-color: lightslategray;
 }
 #rechts {
     position: absolute;
-    top: 0px;
-    right: 10px;
-    width: 160px;
-    height: 300px;
-    background-color: #fc0;
+    padding: 20px;
+    top: 0;
+    right: 0;
+    width: 120px;
+    height: 420px;
+    border-radius: 10px;
+    background-color: lightslategray;
 }
 
 ul {
     list-style-type: none;
+    list-style: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
 }
 
-li {
+ul#hauptmenue>li{
     float: left;
+}
+
+ul#untermenue{
+    display: none;
+}
+
+ul#hauptmenue li:hover ul#untermenue{
+    list-style-type: none;
+    display: block;
+    border-radius: 10px;
+    background-color: grey;
+    position: absolute;
+    border:solid;
+}
+
+li.menu {
+    float: left;
+}
+
+li.untermenu {
+    float: none;
+    margin: 10px;
 }
 
 a.menu:link, a.menu:visited {
@@ -85,7 +120,7 @@ a.menu:link, a.menu:visited {
     text-transform: uppercase;
 }
 
-/*Markiert die Loginbuttons*/
+/*Markiert die Menübuttons*/
 a.menu:hover, a.menu:active {
     background-color: Blue;
 }
