@@ -1,30 +1,37 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-    </head>
-    <body>
-        <?php
-        
-        $vname = $_POST['vname'];
-        $nname = $_POST['nname'];
-        $pw1 = $_POST['pw1'];
-        $email = $_POST['email'];
-        $user = $_POST['user'];
-        $geschl = $_POST['geschl'];
-               
-$connect = mysql_connect('localhost', 'root', '', 'parfum')
-        or die('Fehler beim Aufbau der Verbindung');
- 
-$conn = @mysql_connect($MYSQL_HOST, $MYSQL_USER, $MYSQL_PASS) 
-            OR die("Error: ".mysql_error());
-    $sql = mysql_select_db("parfum") 
-        OR die("Error: ".mysql_error()); 
+<!DOCTYPE html> 
+<html> 
 
-$sql = "INSERT INTO user (Name, Nachname, username, Passwort, Email, Geschlecht)".
-                "VALUES('$vname', '$nname','$email','$user','$pw1','$geschl')";       
-                  
-        ?>
-    </body>
-</html>
+<head> 
+<title>Suchleiste</title> 
+</head> 
+
+<body> 
+
+<?php 
+//* Datenbankverbindung aufbauen (START) 
+
+$verbindung = mysql_connect ("localhost", "root", "") 
+or die ("keine Verbindung möglich. Benutzername oder Passwort sind falsch"); 
+
+mysql_select_db("parfum") or die ("Die Datenbank existiert nicht."); 
+
+//* Datenbankverbindung aufbauen (ENDE) 
+
+    $name = $_POST['name']; 
+     
+    echo "<b>Du hast nach dem Namen: \"<u>$name</u>\" gesucht. Dadurch wurden folgende Einträge gefunden:</b><br /><br />"; 
+
+//* Überprüfung der Eingabe     
+    $abfrage = "SELECT * FROM user WHERE Name LIKE '%$name%'"; 
+    $ergebnis = mysql_query($abfrage) or die(mysql_error()); 
+    if($ausgabe = mysql_fetch_assoc($ergebnis)) 
+        { echo "".$ausgabe['name'].""; } //* Wenn was gefunden wurde, wird es hier ausgegeben. 
+    else 
+        { echo "Es wurde kein Name unter den Namen \"<u>$name</u>\" gefunden.<br /> 
+        Bitte versuche es mit einem anderen namen.<br /> 
+        <a href='test.html'>Zur&uuml;ck!</a>"; 
+    }    // * Wenn nichts gefunden wurde, dann kommt diese Fehlermeldung. 
+             
+?>  
+
+</body>
