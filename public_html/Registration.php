@@ -6,25 +6,25 @@
     </head>
     <body>
         <?php
-        
-        $vname = $_POST['vname'];
-        $nname = $_POST['nname'];
-        $pw1 = $_POST['pw1'];
-        $email = $_POST['email'];
-        $user = $_POST['user'];
-        $geschl = $_POST['geschl'];
-               
-$connect = mysql_connect('localhost', 'root', '', 'parfum')
-        or die('Fehler beim Aufbau der Verbindung');
- 
-$conn = @mysql_connect($MYSQL_HOST, $MYSQL_USER, $MYSQL_PASS) 
-            OR die("Error: ".mysql_error());
-    $sql = mysql_select_db("parfum") 
-        OR die("Error: ".mysql_error()); 
+        $verbindung = mysql_connect("localhost", "root", "")//Passwort von deiner Datenbank (Xampp)
+                or die("keine Verbindung möglich.
+        Benutzername oder Passwort sind falsch");
 
-$sql = "INSERT INTO user (Name, Nachname, username, Passwort, Email, Geschlecht)".
-                "VALUES('$vname', '$nname','$email','$user','$pw1','$geschl')";       
-                  
+        mysql_select_db("parfum")
+                or die("Die Datenbank existiert nicht.");
+
+        $Name = $_POST['vname'];
+        $Nachname = $_POST['nname'];
+        $Email = $_POST['email'];
+        $username = $_POST['user'];
+        $Passwort = $_POST['pw1'];
+        $Geschlecht = $_POST['gesch'];
+        $Passwort1 = md5($Passwort);
+
+        $sql = "INSERT INTO user (ID, Name, Nachname, username, Passwort, Email, Geschlecht)
+ 		 VALUES  ('','$Name', '$Nachname','$username','$Passwort','$Email','$Geschlecht')";
+
+        $ergebnis = mysql_query($sql); //or die(mysql_error()); 
         ?>
     </body>
 </html>

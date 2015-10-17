@@ -2,21 +2,17 @@
 <html>
 
     <head>
-        
         <title>WebShop</title>
 
-        <!-- Link zur css-Datei -->
-        
-        
+        <!-- Link zur css-Datei -->     
         <link href="newcss.css" type="text/css" rel="stylesheet">
 
         <!-- link zur Javaskript-Datei -->
         <script language="javascript" type="text/javascript" src="javascript.js"></script>
         <meta charset="UTF-8">
-
     </head>
 
-    <body>
+    <body>        
         <div id="kopf">  
             <div style="float:left">
                 <!-- Menü Bar, wobei <li> die Elemente listet und <ul> für ungeordnete Liste steht -->
@@ -50,20 +46,20 @@
             <div id="inhalt">
 
                 <h1>Registration</h1>
-                <form  action="suche.php" onSubmit="return checkPw(this)" method="post">
+                <form  action="suche.php" method = "POST" onSubmit="return checkPw(this)">
                     <table>
                         <tr>
                             <td>Vorname:</td>
-                            <td><input id="vname" ></td>
+                            <td><input type="text" name="vname"></td>
                         </tr>
                         <tr>
                             <td>Nachname:</td>
-                            <td><input id="nname" ></td>
+                            <td><input type="text" name="nname"></td>
                         </tr>
 
                         <tr>
                             <td>E-Mail:</td>
-                            <td><input id="email" name="adr" value="" onchange="checkEmail(this.form.adr)"></td>
+                            <td><input type="text" name="email" value="" onchange="checkEmail(this.form.email)"></td>
                         </tr>
                         <tr>
                             <td>&nbsp;</td><td><p id="checkEmail" style="color:grey"></p></td>
@@ -71,28 +67,27 @@
                         <tr><td>&nbsp;</td></tr>
                         <tr>
                             <td>Benutzername:</td>
-                            <td><input id="user" ></td>
+                            <td><input type="text" name = "user"></td>
                         </tr>
                         <tr>
                             <td>Passwort:</td>
-                            <td><input id="pw1" type="password" pattern=".{6,}" required title="6 Charactere minimum" placeholder="min. 6 Charaktere"></td>
+                            <td><input id="pw1" name="pw1" type="password" pattern=".{6,}" required placeholder="min. 6 Charaktere"></td>
                         </tr>
                         <tr>
                             <td>Re-Enter</td>
-                            <td><input id="pw2" type="password" pattern=".{6,}"   required title="6 Charactere minimum"></td>
+                            <td><input id="pw2" name="pw1" type="password" pattern=".{6,}" required></td>
                         </tr>
                         <tr><td>&nbsp;</td></tr>
                         <tr>
                             <td>Männlich</td>
-                            <td><input type="radio" name="geschlecht" id="geschl" value="männl"></td>
+                            <td><input type="radio" name="gesch"  value="männlich"></td>
                         </tr>
 
                         <tr>
                             <td>Weiblich</td>
-                            <td><input type="radio" name="geschlecht" id="geschl" value="weibl"></td>
+                            <td><input type="radio" name="gesch" value="weiblich"></td>
                         </tr>
                         <tr><td>&nbsp;</td></tr>
-
                     </table>
                     <input type="submit" value="Submit">
                     <input type="reset" value="Zurücksetzen"> 
