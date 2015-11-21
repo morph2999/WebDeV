@@ -31,14 +31,14 @@
             </div>
 
             <div style="float:right; display:block; overflow:hidden">
-                    <form action="suche.php" method="post">
-                        <table>
-                            <tr>
-                                <td><input size="100" name="vname" type="text" maxlength="255" placeholder="Nach Artikel suchen"/></td>
-                            </tr>
-                        </table>
-                    </form>
-                </div>     
+                <form action="suche.php" method="post">
+                    <table>
+                        <tr>
+                            <td><input size="100" name="vname" type="text" maxlength="255" placeholder="Nach Artikel suchen"/></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>     
         </div>    
 
         <div id="mitte">
@@ -49,16 +49,37 @@
 
                     <form action="demo_form.asp" style="text-align: left">
                         <p><font color="#FFFFFF"> User: <input type="text" name="usrname" size="13">
-                        PW: <input type="password" name="usrpw" size="13"></font></p>
+                            PW: <input type="password" name="usrpw" size="13"></font></p>
                         <p><input type="submit" value="Submit"></p><a href="Registrieren.html">Registrieren</a>
                     </form>  
                 </div>                
             </div>
             <div id="inhalt">    
+                <table>
+                                    
+                <?php
+                require_once ('konfiguration.php');
+                $db_link = mysqli_connect (
+                localhost, 
+                root, 
+                , 
+                parfum
+                );
 
-                <h1>Shop</h1>
-                <p> Dies ist die beste Seite der Welt!!</p>
+                $sql = "SELECT * FROM produkthe";
 
+                while ($zeile = mysqli_fetch_array( $db_erg, MYSQL_ASSOC))
+                {
+                echo "<tr>";    
+                echo "<td>". $zeile['Bild'] . "</td>";
+                echo "<td>". $zeile['Name'] . "</td>";
+                echo "<td>". $zeile['Art'] . "</td>";
+                echo "<td>". $zeile['grosse'] . "</td>";
+                echo "<td>". $zeile['Preis'] . "</td>";
+                echo "</tr>";
+                }
+                ?>
+                </table>
             </div>
         </div>
 </html>

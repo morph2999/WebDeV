@@ -22,7 +22,7 @@
         $Passwort1 = md5($Passwort);
 
         $sql = "INSERT INTO user (ID, Name, Nachname, username, Passwort, Email, Geschlecht)
- 		 VALUES  ('','$Name', '$Nachname','$username','$Passwort','$Email','$Geschlecht')";
+ 		 VALUES  ('','$Name', '$Nachname','$username','$Passwort1','$Email','$Geschlecht')";
 
         $ergebnis = mysql_query($sql); //or die(mysql_error()); 
         ?>
