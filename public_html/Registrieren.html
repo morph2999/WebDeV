@@ -29,20 +29,30 @@
                 </ul>
             </div>
 
-            <div style="float:right">
-                <!-- Login-Buttons -->
-
-                <form action="demo_form.asp" style="text-align: right">
-                    <font color="#FFFFFF"> User: <input type="text" name="usrname" size="10">
-                    PW: <input type="password" name="usrpw" size="10"></font><br>
-                    <a href="Registrieren.html">Registrieren</a>&nbsp;&nbsp;<input type="submit" value="Submit">
-                </form>  
-            </div>
+            <div style="float:right; display:block; overflow:hidden">
+                    <form action="suche.php" method="post">
+                        <table>
+                            <tr>
+                                <td><input size="100" name="vname" type="text" maxlength="255" placeholder="Nach Artikel suchen"/></td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>     
         </div>
 
         <div id="mitte">
             <div id="links"></div>
-            <div id="rechts"></div>
+            <div id="rechts">
+                <div>
+                    <!-- Login-Buttons -->
+
+                    <form action="demo_form.asp" style="text-align: left">
+                        <p><font color="#FFFFFF"> User: <input type="text" name="usrname" size="13">
+                        PW: <input type="password" name="usrpw" size="13"></font></p>
+                        <p><input type="submit" value="Submit"></p><a href="Registrieren.html">Registrieren</a>
+                    </form>  
+                </div>                
+            </div>
             <div id="inhalt">
 
                 <h1>Registration</h1>
