@@ -37,3 +37,17 @@ insert into user (Name, Nachname, username, Passwort, Email, Geschlecht) values 
 insert into user (Name, Nachname, username, Passwort, Email, Geschlecht) values ("Muhammet","Celal","MOCEL",SHA1('muhammet'),"celal.MO@gmx.de", "Maenlich");
 insert into user (Name, Nachname, username, Passwort, Email, Geschlecht) values ("Mahmut","Kiroh","Mahmma",SHA1('mahmut'),"Mahm.Kiros@gmx.de", "Maenlich");
 insert into user (Name, Nachname, username, Passwort, Email, Geschlecht) values ("Diggi","DI CArlo","Delta",SHA1('DICARLO885'),"YEAJ.aaa@gmx.de", "Maenlich");
+
+ALTER TABLE `produktda` ADD `Bild` LONGBLOB NOT NULL AFTER `Preis`;
+ALTER TABLE `produkthe` ADD `Bild` LONGBLOB NOT NULL AFTER `Preis`;
+
+UPDATE `parfum`.`produktda` SET `Bild` = "http://ecx.images-amazon.com/images/I/31gLPhLsW2L.jpg" Where `ID` = 1
+UPDATE `parfum`.`produktda` SET `Bild` = "http://cdn1.feelunique.com/img/products/53356/Michael_Kors_Sporty_Citrus_Eau_De_Parfum_30ml_1412702637_main.jpg" Where `ID` = 2
+UPDATE `parfum`.`produktda` SET `Bild` = "http://cdn.idealo.com/folder/Product/3333/7/3333733/s1_produktbild_mid/chloe-eau-de-parfum.jpg" Where `ID` = 3
+UPDATE `parfum`.`produktda` SET `Bild` = "http://cdn1.feelunique.com/img/products/53356/Michael_Kors_Sporty_Citrus_Eau_De_Parfum_30ml_1412702637_main.jpg" Where `ID` = 4
+UPDATE `parfum`.`produktda` SET `Bild` = "http://www.parfum24.de/media/catalog/product/cache/6/thumbnail/265x265/9df78eab33525d08d6e5fb8d27136e95/t/o/tommy-hilfiger-tommy-girl-edc-vapo-100ml.jpg" Where `ID` = 5
+UPDATE `parfum`.`produktda` SET `Bild` = "https://media.douglas.de/408504/900_0/Thierry_Mugler-Alien-Spray_nachfullbar.jpg" Where `ID` = 6
+UPDATE `parfum`.`produktda` SET `Bild` = "http://cdn01.flaconi.de/media/catalog/product/n/a/narciso-rodriguez-for-her-eau-de-toilette-100ml_8.jpg" Where `ID` = 7
+UPDATE `parfum`.`produktda` SET `Bild` = "https://media.douglas.de/473145/900_0/Yves_Saint_Laurent-Parisienne.jpg" Where `ID` = 8
+UPDATE `parfum`.`produktda` SET `Bild` = "http://www.world-discounter.com/pic/61100078a.jpg" Where `ID` = 9
+UPDATE `parfum`.`produktda` SET `Bild` = "http://www.positiv-magazin.de/wp-content/uploads/2011/07/Socken.jpg" Where `ID` = 10
