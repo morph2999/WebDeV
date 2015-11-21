@@ -26,48 +26,47 @@
 
     <body>
         <div id="kopf">  
-            <div style="float:left">
-                <!-- Menü Bar, wobei <li> die Elemente listet und <ul> für ungeordnete Liste steht -->
-                <ul id="hauptmenue">
-                    <li class="menu"><a class= "menu" href="index.html">Home</a></li>
-                    <li class="menu"><a class= "menu" href="Warenkorb.html">Shop</a>
-                        <ul id="untermenue">
-                            <li class="untermenu"><a class= "menu" href="dump.html">Unterpunkt 1</a></li>
-                            <li class="untermenu"><a class= "menu" href="dump.html">Unterpunkt 2</a></li>
-                            <li class="untermenu"><a class= "menu" href="dump.html">Unterpunkt 3</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu"><a class= "menu" href="MeinProfil.html">Profil</a></li>
-                </ul>
-            </div>
-            
-            <div style="float:left">
-                <form action="suche.php" method="post">
-                    <table align="center" width="200">
-                        <tr>
-                            <td width="40%">Username:</td>
-                            <td width="60%"><input name="vname" type="text" maxlength="255" size="20"/></td>
-                        </tr><tr>
-                            <td colspan="2"><input type="submit" value="Username suchen" /></td>
-                        </tr>
-                    </table>
-                </form>
-            </div>
-
-            <div style="float:right">
-                <!-- Login-Buttons -->
-
-                <form action="demo_form.asp" style="text-align: right">
-                    <font color="#FFFFFF"> User: <input type="text" name="usrname" size="10">
-                    PW: <input type="password" name="usrpw" size="10"></font><br>
-                    <a href="Registrieren.html">Registrieren</a>&nbsp;&nbsp;<input type="submit" value="Submit">
-                </form>  
+            <div style="display:inline">
+                <div style="float:left; display:inline-block">
+                    <!-- Menü Bar, wobei <li> die Elemente listet und <ul> für ungeordnete Liste steht -->
+                    <ul id="hauptmenue">
+                        <li class="menu"><a class= "menu" href="index.html">Home</a></li>
+                        <li class="menu"><a class= "menu" href="Warenkorb.html">Shop</a>
+                            <ul id="untermenue">
+                                <li class="untermenu"><a class= "menu" href="dump.html">Unterpunkt 1</a></li>
+                                <li class="untermenu"><a class= "menu" href="dump.html">Unterpunkt 2</a></li>
+                                <li class="untermenu"><a class= "menu" href="dump.html">Unterpunkt 3</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu"><a class= "menu" href="MeinProfil.html">Profil</a></li>
+                    </ul>
+                </div>
+                          
+                <div style="float:right; display:block; overflow:hidden">
+                    <form action="suche.php" method="post">
+                        <table>
+                            <tr>
+                                <td><input size="50" name="vname" type="text" maxlength="255" placeholder="Nach Artikel suchen"/></td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>                
             </div>
         </div>
-
+        
         <div id="mitte">
             <div id="links"></div>
-            <div id="rechts"></div>
+            <div id="rechts">
+                <div>
+                    <!-- Login-Buttons -->
+
+                    <form action="demo_form.asp" style="text-align: left">
+                        <font color="#FFFFFF"> User: <input type="text" name="usrname" size="10">
+                        PW: <input type="password" name="usrpw" size="10"></font><br>
+                        <a href="Registrieren.html">Registrieren</a>&nbsp;&nbsp;<input type="submit" value="Submit">
+                    </form>  
+                </div>                
+            </div>
             <div id="inhalt">
                 <h1>Home</h1>
 
