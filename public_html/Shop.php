@@ -19,7 +19,7 @@
                 <!-- Menü Bar, wobei <li> die Elemente listet und <ul> für ungeordnete Liste steht -->
                 <ul id="hauptmenue">
                     <li class="menu"><a class= "menu" href="index.html">Home</a></li>
-                    <li class="menu"><a class= "menu" href="Warenkorb.html">Shop</a>
+                    <li class="menu"><a class= "menu" href="Shop.php">Shop</a>
                         <ul id="untermenue">
                             <li class="untermenu"><a class= "menu" href="dump.html">Unterpunkt 1</a></li>
                             <li class="untermenu"><a class= "menu" href="dump.html">Unterpunkt 2</a></li>
@@ -56,30 +56,29 @@
                 </div>                
             </div>
             <div id="inhalt">    
-                <table>
+                <table align="center">
+                    <tr style="outline: thin solid"><td></td><td><b>Name</b></td><td>Art</td><td>Menge</td><td>Preis</td></tr>
                     <?php
-
                     $verbindung = mysql_connect("localhost", "root", "")//Passwort von deiner Datenbank (Xampp)
-                    or die("keine Verbindung möglich.
+                            or die("keine Verbindung möglich.
                     Benutzername oder Passwort sind falsch");
 
                     mysql_select_db("parfum")
-                    or die("Die Datenbank existiert nicht.");
+                            or die("Die Datenbank existiert nicht.");
 
                     $sql = mysql_query("SELECT * FROM produkthe");
 
                     while ($zeile = mysql_fetch_assoc($sql)) {
-                    echo "<tr>";
-                    echo "<td>" . $zeile['Bild'] . "</td>";
-                    echo "<td>" . $zeile['Name'] . "</td>";
-                    echo "<td>" . $zeile['Art'] . "</td>";
-                    echo "<td>" . $zeile['grosse'] . "</td>";
-                    echo "<td>" . $zeile['Preis'] . "</td>";
-                    echo "</tr>";
+                        echo "<tr>";
+                        echo "<td><img src='" . $zeile['Bildurl'] . "' height='100px' width='100px'/></td>";
+                        echo "<td>" . $zeile['Name'] . "</td>";
+                        echo "<td>" . $zeile['Art'] . "</td>";
+                        echo "<td>" . $zeile['grosse'] . "</td>";
+                        echo "<td>" . $zeile['Preis'] . "</td>";
+                        echo "</tr>";
                     }
                     ?>
                 </table>
-                <?php echo "$zeile"; ?>
             </div>
         </div>
 </html>
