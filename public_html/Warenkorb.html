@@ -55,31 +55,9 @@
                 </div>                
             </div>
             <div id="inhalt">    
-                <table>
-                                    
                 <?php
-                require_once ('konfiguration.php');
-                $db_link = mysqli_connect (
-                localhost, 
-                root, 
-                , 
-                parfum
-                );
-
-                $sql = "SELECT * FROM produkthe";
-
-                while ($zeile = mysqli_fetch_array( $db_erg, MYSQL_ASSOC))
-                {
-                echo "<tr>";    
-                echo "<td>". $zeile['Bild'] . "</td>";
-                echo "<td>". $zeile['Name'] . "</td>";
-                echo "<td>". $zeile['Art'] . "</td>";
-                echo "<td>". $zeile['grosse'] . "</td>";
-                echo "<td>". $zeile['Preis'] . "</td>";
-                echo "</tr>";
-                }
+                include('Waren.php');
                 ?>
-                </table>
             </div>
         </div>
 </html>
