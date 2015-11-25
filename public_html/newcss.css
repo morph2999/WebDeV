@@ -112,11 +112,22 @@ a.menu:link, a.menu:visited {
     text-transform: uppercase;
 }
 
+a.zoom span { 
+    display: none;
+    text-decoration: none; 
+}
+
+a.zoom:hover span {
+    z-index:1;
+    display: block;
+    position: fixed; 
+    //bottom:0px; 
+    top: 100px; /* durch diese Pixelzahl wird das vergrößerte Bild nach unten verschoben */ 
+    right: 210px; /* Pixelzahl, die das Bild nach links verschiebt */ 
+    padding: 0px; 
+}
+
 /*Markiert die Menübuttons*/
 a.menu:hover, a.menu:active {
     background-color: Blue;
-}
-
-td.shop{
-    padding: 15px;
 }

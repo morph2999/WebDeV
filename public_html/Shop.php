@@ -55,7 +55,7 @@
                 </div>                
             </div>
             <div id="inhalt">    
-                <table align="center" class="shop">
+                <table align="center">
                     <?php
                     $verbindung = mysql_connect("localhost", "root", "")//Passwort von deiner Datenbank (Xampp)
                             or die("keine Verbindung möglich.
@@ -65,18 +65,13 @@
                             or die("Die Datenbank existiert nicht.");
 
                     $sql = mysql_query("SELECT * FROM produkthe");
-                    
+
                     while ($zeile = mysql_fetch_array($sql)) {
                         echo "<tr>";
-                        $i = 1;
-                        while ($i <= 3) {
-                            echo "<td class='shop'><img src='" . $zeile['Bildurl'] . "' height='100px' width='100px'/></td>";
-                            echo "<td class='shop'>"
-                            . $zeile['Name'] . "<br>" . $zeile['Art'] .
-                            "<br>" . $zeile['grosse'] . "<br><b>" . $zeile['Preis'] . " €</b></td>";
-                            $i++;
-                            
-                        }
+                        echo "<td><a href='#' class='zoom'><img src='" . $zeile['Bildurl'] . "' height='100px' width='100px'/><span><img src='" . $zeile['Bildurl'] . "' height='auto' width='250px'/></span></td>";
+                        echo "<td>"
+                        . $zeile['Name'] . "<br>" . $zeile['Art'] .
+                        "<br>" . $zeile['grosse'] . "<br><b>" . $zeile['Preis'] . " €</b></td>";
                         echo "</tr>";
                     }
                     ?>
