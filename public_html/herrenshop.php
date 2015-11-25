@@ -54,12 +54,28 @@
                     </form>   
                 </div>                
             </div>
-            <div id="inhalt" align="center">    
-                <img src="images/malefemale.jpg" align="center" usemap="areale">
-                <map name="areale">
-                    <area shape="rect" coords="0,0,333,500" href="damenshop.php" alt="EckeLinks" title=Damen>
-                    <area shape="rect" coords="333,0,666,500" href="herrenshop.php" alt="EckeRechts" title="Herren">                    
-                </map>
+            <div id="inhalt">    
+                <table align="center">
+                    <?php
+                    $verbindung = mysql_connect("localhost", "root", "")//Passwort von deiner Datenbank (Xampp)
+                            or die("keine Verbindung möglich.
+                    Benutzername oder Passwort sind falsch");
+
+                    mysql_select_db("parfum")
+                            or die("Die Datenbank existiert nicht.");
+
+                    $sql = mysql_query("SELECT * FROM produkthe");
+
+                    while ($zeile = mysql_fetch_array($sql)) {
+                        echo "<tr>";
+                        echo "<td style='padding:15px'><a href='#' class='zoom'><img src='" . $zeile['Bildurl'] . "' height='100px' width='100px'/><span><img src='" . $zeile['Bildurl'] . "' height='auto' width='250px'/></span></td>";
+                        echo "<td style='padding:15px'>"
+                        . $zeile['Name'] . "<br>" . $zeile['Art'] .
+                        "<br>" . $zeile['grosse'] . "<br><b>" . $zeile['Preis'] . " €</b></td>";
+                        echo "</tr>";
+                    }
+                    ?>
+                </table>
             </div>
         </div>
     </body>
