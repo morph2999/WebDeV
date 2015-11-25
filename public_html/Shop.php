@@ -21,9 +21,8 @@
                     <li class="menu"><a class= "menu" href="index.html">Home</a></li>
                     <li class="menu"><a class= "menu" href="Shop.php">Shop</a>
                         <ul id="untermenue">
-                            <li class="untermenu"><a class= "menu" href="dump.html">Unterpunkt 1</a></li>
-                            <li class="untermenu"><a class= "menu" href="dump.html">Unterpunkt 2</a></li>
-                            <li class="untermenu"><a class= "menu" href="dump.html">Unterpunkt 3</a></li>
+                            <li class="untermenu"><a class= "menu" href="dump.html">Herren</a></li>
+                            <li class="untermenu"><a class= "menu" href="dump.html">Damen</a></li>
                         </ul>
                     </li>
                     <li class="menu"><a class= "menu" href="MeinProfil.html">Profil</a></li>
@@ -56,8 +55,7 @@
                 </div>                
             </div>
             <div id="inhalt">    
-                <table align="center">
-                    <tr style="outline: thin solid"><td></td><td><b>Name</b></td><td>Art</td><td>Menge</td><td>Preis</td></tr>
+                <table align="center" class="shop">
                     <?php
                     $verbindung = mysql_connect("localhost", "root", "")//Passwort von deiner Datenbank (Xampp)
                             or die("keine Verbindung möglich.
@@ -70,11 +68,11 @@
 
                     while ($zeile = mysql_fetch_assoc($sql)) {
                         echo "<tr>";
-                        echo "<td><img src='" . $zeile['Bildurl'] . "' height='100px' width='100px'/></td>";
-                        echo "<td>" . $zeile['Name'] . "</td>";
-                        echo "<td>" . $zeile['Art'] . "</td>";
-                        echo "<td>" . $zeile['grosse'] . "</td>";
-                        echo "<td>" . $zeile['Preis'] . "</td>";
+                        echo "<td class='shop'><img src='" . $zeile['Bildurl'] . "' height='100px' width='100px'/></td>";
+                        echo "<td class='shop'>" . $zeile['Name'] . "</td>";
+                        echo "<td class='shop'>" . $zeile['Art'] . "</td>";
+                        echo "<td class='shop'>" . $zeile['grosse'] . "</td>";
+                        echo "<td class='shop'>" . $zeile['Preis'] . "</td>";
                         echo "</tr>";
                     }
                     ?>

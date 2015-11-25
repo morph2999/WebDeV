@@ -18,14 +18,6 @@ a {
     position: relative;
 }
 
-#bildmittig {
-    width: 409px;
-    height: 152px;
-    overflow: auto;
-    margin: auto;
-    top: 0; left: 0; bottom: 0; right: 0;
-}
-
 #mitte {
     margin: auto;
     position: relative;
@@ -51,7 +43,7 @@ a {
     border-color: grey;
     background-color: white;
     z-index: 1;
-    position: absolute;
+    position: relative;
 }
 
 #links {
@@ -123,4 +115,8 @@ a.menu:link, a.menu:visited {
 /*Markiert die Menübuttons*/
 a.menu:hover, a.menu:active {
     background-color: Blue;
+}
+
+td.shop{
+    padding: 15px;
 }
