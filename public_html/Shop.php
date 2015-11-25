@@ -65,14 +65,17 @@
                             or die("Die Datenbank existiert nicht.");
 
                     $sql = mysql_query("SELECT * FROM produkthe");
-
-                    while ($zeile = mysql_fetch_assoc($sql)) {
+                    while ($zeile = mysql_fetch_array($sql)) {
                         echo "<tr>";
+                        $i = 1;
+                        while ($i <= 3 & $zeile = mysql_fetch_array($sql))
+                        {
                         echo "<td class='shop'><img src='" . $zeile['Bildurl'] . "' height='100px' width='100px'/></td>";
-                        echo "<td class='shop'>" . $zeile['Name'] . "</td>";
-                        echo "<td class='shop'>" . $zeile['Art'] . "</td>";
-                        echo "<td class='shop'>" . $zeile['grosse'] . "</td>";
-                        echo "<td class='shop'>" . $zeile['Preis'] . "</td>";
+                        echo "<td class='shop'>"
+                        . $zeile['Name'] . "<br>" . $zeile['Art'] .
+                        "<br>" . $zeile['grosse'] . "<br><b>" . $zeile['Preis'] . " €</b></td>";
+                        $i++;
+                        }
                         echo "</tr>";
                     }
                     ?>
