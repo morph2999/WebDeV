@@ -55,7 +55,7 @@
                 </div>                
             </div>
             <div id="inhalt" align="center">    
-                <img src="images/malefemale.jpg" align="center" usemap="areale">
+                <img src="images/malefemale.jpg" align="center" usemap="#areale">
                 <map name="areale">
                     <area shape="rect" coords="0,0,333,500" href="damenshop.php" alt="EckeLinks" title=Damen>
                     <area shape="rect" coords="333,0,666,500" href="herrenshop.php" alt="EckeRechts" title="Herren">                    
