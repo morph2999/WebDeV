@@ -6,7 +6,8 @@ function checkPw()
 //Prüft, ob die zwei eingegebenen Passwörter übereinstimmen
 
     if (Eingabepw01 != Eingabepw02)
-        alert("Passwörter stimmen nicht überein");
+        alert("Passwörter stimmen nicht überein") 
+        return false;
 }
 
 function checkEmail(email) {

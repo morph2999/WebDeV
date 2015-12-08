@@ -21,6 +21,31 @@
 
         <!-- link zur Javaskript-Datei -->
         <script language="javascript" type="text/javascript" src="javascript.js"></script>
+        <script>
+            var request = new XMLHttpRequest();
+
+            function Registration() {
+                request.open("POST", "Registrieren.html", true);
+                request.onreadystatechange = myEventHandler;
+                request.send(null);
+            }
+
+            function Profil() {
+                request.open("POST", "MeinProfil.html", true);
+                request.onreadystatechange = myEventHandler;
+                request.send(null);
+            }
+
+            function Shop() {
+                request.open("POST", "Shop.php", true);
+                request.onreadystatechange = myEventHandler;
+                request.send(null);
+            }
+            function myEventHandler() {
+                document.getElementById('ausgabe').innerHTML = request.responseText;
+            }
+        </script>
+
         <meta charset="UTF-8">
     </head>
 
@@ -31,13 +56,13 @@
                     <!-- Menü Bar, wobei <li> die Elemente listet und <ul> für ungeordnete Liste steht -->
                     <ul id="hauptmenue">
                         <li class="menu"><a class= "menu" href="index.html">Home</a></li>
-                        <li class="menu"><a class= "menu" href="Shop.php">Shop</a>
+                        <li class="menu"><a class= "menu" href='#' onclick="Shop()">Shop</a>
                             <ul id="untermenue">
                                 <li class="untermenu"><a class= "menu" href="herrenshop.php">Herren</a></li>
                                 <li class="untermenu"><a class= "menu" href="damenshop.php">Damen</a></li>
                             </ul>
                         </li>
-                        <li class="menu"><a class= "menu" href="MeinProfil.html">Profil</a></li>
+                        <li class="menu"><a class= "menu" href='#' onclick="Profil()">Profil</a></li>
                     </ul>
                 </div>
 
@@ -63,29 +88,15 @@
                         <p><font color="#FFFFFF"> User: <input type="text" name="username" size="13">
                             PW: <input type="password" name="pw" size="13"></font></p>
                         <p><input type="submit" value="Submit"></p>
-                        <a href="Registrieren.html">Registrieren</a>
+
+                        <a href='#' onclick="Registration()">Registrieren</a>
+
                     </form>  
                 </div>                
             </div>
-            <div id="inhalt">
-                <h1>Home</h1>
-
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   
-
-                Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.   
-
-                Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.   
-
-                Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.   
-
-                Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.   
-
-                At vero eos et accusam et justo duo dolores et ea rebum. 
-
+            <div id="ausgabe">
             </div>
-
         </div>
-
     </body>
 
 </html>
