@@ -18,3 +18,45 @@ function checkEmail(email) {
   else { info += 'ist fehlerhaft!'; email.focus(); }
   document.getElementById('checkEmail').innerHTML = info;
 }
+
+var request = new XMLHttpRequest();
+
+            function Registration() {
+                request.open("POST", "Registrieren.html", true);
+                request.onreadystatechange = myEventHandler;
+                request.send(null);
+            }
+
+            function Profil() {
+                request.open("POST", "MeinProfil.html", true);
+                request.onreadystatechange = myEventHandler;
+                request.send(null);
+            }
+
+            function Shop() {
+                request.open("POST", "Shop.php", true);
+                request.onreadystatechange = myEventHandler;
+                request.send(null);
+            }
+            
+            function Herren() {
+                request.open("POST", "herrenshop.php", true);
+                request.onreadystatechange = myEventHandler;
+                request.send(null);
+            }
+            
+            function Damen() {
+                request.open("POST", "damenshop.php", true);
+                request.onreadystatechange = myEventHandler;
+                request.send(null);
+            }
+            
+            function Angebot() {
+                request.open("POST", "Angebot.php", true);
+                request.onreadystatechange = myEventHandler;
+                request.send(null);
+            }
+            
+            function myEventHandler() {
+                document.getElementById('ausgabe').innerHTML = request.responseText;
+            }

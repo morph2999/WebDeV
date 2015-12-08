@@ -13,11 +13,11 @@
     </head>
 
     <body>
-            <div id="inhalt" align="center">    
-                <img src="images/malefemale.jpg" align="center" usemap="#areale">
+            <div id="inhalt" align="center" style="background: rgba(225, 225, 225, 0.5);">    
+                <img src="images/malefemale.png" align="center" usemap="#areale">
                 <map name="areale">
-                    <area shape="rect" coords="0,0,333,500" href="damenshop.php" alt="EckeLinks" title=Damen>
-                    <area shape="rect" coords="333,0,666,500" href="herrenshop.php" alt="EckeRechts" title="Herren">                    
+                    <area shape="rect" coords="0,0,333,500" href='#' onclick="Damen()" alt="EckeLinks" title=Damen>
+                    <area shape="rect" coords="333,0,666,500" href='#' onclick="Herren()" alt="EckeRechts" title="Herren">                    
                 </map>
             </div>
         </div>

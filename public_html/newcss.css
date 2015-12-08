@@ -1,6 +1,5 @@
 body {
     margin: 5px 20px;
-    /*background-color: lightgrey;*/
     background-image: url(images/wallpaper3.jpg);
 }
 
@@ -14,8 +13,7 @@ a {
     height: 40px;
     padding: 10px;
     border-radius: 10px;
-    /*background-color: lightslategray;*/
-    z-index: 2;
+    z-index: 200;
     position: relative;
     background-image: url(images/banner.png);
 }
@@ -33,7 +31,7 @@ a {
     position: fixed;
     bottom: 0px;
 }
-
+/*
 #inhalt {
     margin: 0px 180px;
     left: 0px;
@@ -43,10 +41,9 @@ a {
     border: solid; 
     border-radius: 10px;
     border-color: grey;
-    background-color: white;
-    z-index: 1;
+    z-index: 100;
     position: relative;
-}
+}*/
 
 #links {
     position: absolute ;
@@ -120,7 +117,7 @@ a.zoom span {
 }
 
 a.zoom:hover span {
-    z-index:1;
+    z-index: 1;
     display: block;
     position: fixed; 
     //bottom:0px; 
