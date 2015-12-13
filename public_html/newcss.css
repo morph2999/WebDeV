@@ -31,7 +31,7 @@ a {
     position: fixed;
     bottom: 0px;
 }
-/*
+
 #inhalt {
     margin: 0px 180px;
     left: 0px;
@@ -43,7 +43,7 @@ a {
     border-color: grey;
     z-index: 100;
     position: relative;
-}*/
+}
 
 #links {
     position: absolute ;

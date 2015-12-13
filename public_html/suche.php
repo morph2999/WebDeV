@@ -1,37 +1,41 @@
 <!DOCTYPE html> 
 <html> 
 
-<head> 
-<title>Suchleiste</title> 
-</head> 
+    <head> 
+        <title>WebShop</title>
 
-<body> 
+        <!-- Link zur css-Datei -->
+        <link href="newcss.css" type="text/css" rel="stylesheet">
 
-<?php 
-//* Datenbankverbindung aufbauen (START) 
+        <!-- link zur Javaskript-Datei -->
+        <script language="javascript" type="text/javascript" src="javascript.js"></script>
+        <meta charset="UTF-8">
+    </head> 
 
-$verbindung = mysql_connect ("localhost", "root", "") 
-or die ("keine Verbindung möglich. Benutzername oder Passwort sind falsch"); 
+    <body> 
+        <div id="inhalt" style="background: rgba(225, 225, 225, 0.5);">  
 
-mysql_select_db("parfum") or die ("Die Datenbank existiert nicht."); 
+            <?php
+            $verbindung = mysql_connect("localhost", "root", "")
+                    or die("keine Verbindung möglich. Benutzername oder Passwort sind falsch");
 
-//* Datenbankverbindung aufbauen (ENDE) 
+            mysql_select_db("parfum") or die("Die Datenbank existiert nicht.");
 
-    $Name = $_POST['vname']; 
-     
-    echo "<b>Du hast nach dem Namen: \"<u>$Name</u>\" gesucht. Dadurch wurden folgende Einträge gefunden:</b><br /><br />"; 
+            $Name = $_GET["Name"];
 
-//* Überprüfung der Eingabe     
-    $abfrage = "SELECT * FROM user WHERE Name LIKE '%$Name%'"; 
-    $ergebnis = mysql_query($abfrage) or die(mysql_error()); 
-    if($ausgabe = mysql_fetch_assoc($ergebnis)) 
-        { echo "".$ausgabe['Name'].""; } //* Wenn was gefunden wurde, wird es hier ausgegeben. 
-    else 
-        { echo "Es wurde kein Name unter den Namen \"<u>$Name</u>\" gefunden.<br /> 
-        Bitte versuche es mit einem anderen namen.<br /> 
-        <a href='test.html'>Zur&uuml;ck!</a>"; 
-    }    // * Wenn nichts gefunden wurde, dann kommt diese Fehlermeldung. 
-             
-?>  
+            echo "<b>Du hast nach \"<u>$Name</u>\" gesucht. Dadurch wurden folgende Einträge gefunden:</b><br /><br />";
 
-</body>
+            $abfrage = "SELECT * FROM produktda WHERE Name LIKE '%$Name%' UNION ALL SELECT * FROM produkthe WHERE Name LIKE '%$Name%'";
+            $ergebnis = mysql_query($abfrage) or die(mysql_error());
+
+            echo "<table>";
+
+            while ($row = mysql_fetch_assoc($ergebnis)) {
+                echo "<tr>";
+                echo "<td>" . $row['Name'] . "</td><td>" . $row['Preis'] . "</td>";
+                echo "</tr>";
+            }
+            echo "</table>";
+            ?>  
+        </div>
+    </body>

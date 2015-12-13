@@ -57,6 +57,12 @@ var request = new XMLHttpRequest();
                 request.send(null);
             }
             
+            function Suche() {
+                request.open("POST", "suche.php", true);
+                request.onreadystatechange = myEventHandler;
+                request.send(null);
+            }
+            
             function myEventHandler() {
                 document.getElementById('ausgabe').innerHTML = request.responseText;
             }
