@@ -13,7 +13,7 @@
     </head> 
 
     <body> 
-        <div id="inhalt" style="background: rgba(225, 225, 225, 0.5);">  
+        <div id="inhalt" style="z-index: 100001; position: absolute; background-color: white">  
 
             <?php
             $verbindung = mysql_connect("localhost", "root", "")
@@ -21,21 +21,25 @@
 
             mysql_select_db("parfum") or die("Die Datenbank existiert nicht.");
 
-            $Name = $_GET["Name"];
+            if ($_POST["suchbegriff"]) {
+                // Mysql Abfrage wird gespeichert mit den Notwendigen Parameter
+                $sql = "SELECT * FROM produkte WHERE Name LIKE ('%" . mysql_real_escape_string(utf8_decode($_POST["suchbegriff"])) . "%')   UNION ALL SELECT * FROM produkte WHERE Preis LIKE ('%" . mysql_real_escape_string(utf8_decode($_POST["suchbegriff"])) . "%') ";
 
-            echo "<b>Du hast nach \"<u>$Name</u>\" gesucht. Dadurch wurden folgende Einträge gefunden:</b><br /><br />";
+                // Mysql Abfrage wird durchgeführt
+                $result = mysql_query($sql);
 
-            $abfrage = "SELECT * FROM produktda WHERE Name LIKE '%$Name%' UNION ALL SELECT * FROM produkthe WHERE Name LIKE '%$Name%'";
-            $ergebnis = mysql_query($abfrage) or die(mysql_error());
+                // Suchbegriff wird ausgegeben
+                echo "Sie Suchten nach: " . $_POST["suchbegriff"] . "<br/><br/>";
 
-            echo "<table>";
+                // Ergebnis wird ausgegeben mit Zeilenumbruch
+                while ($row = mysql_fetch_object($result)) {
+                    echo utf8_encode($row->Name . "        Preis:       ");
+                    echo utf8_encode($row->Preis);
 
-            while ($row = mysql_fetch_assoc($ergebnis)) {
-                echo "<tr>";
-                echo "<td>" . $row['Name'] . "</td><td>" . $row['Preis'] . "</td>";
-                echo "</tr>";
+                    echo "<br/>";
+                }
             }
-            echo "</table>";
-            ?>  
+            ?>
         </div>
     </body>
+</html>

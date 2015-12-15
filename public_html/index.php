@@ -1,5 +1,11 @@
 <!DOCTYPE html>
-
+<?php
+session_start();
+if (!isset($_SESSION['username'])) {
+    echo "Bitte erst <a href=\"indexlog.php\">einloggen</a>";
+    exit;
+}
+?>
 <html>
 
     <head>
@@ -19,20 +25,19 @@
                 <div style="float:left">
                     <!-- Menü Bar, wobei <li> die Elemente listet und <ul> für ungeordnete Liste steht -->
                     <ul id="hauptmenue">
-                        <li class="menu"><a class= "menu" href="index.html">Home</a></li>
+                        <li class="menu"><a class= "menu" href="index.php">Home</a></li>
                         <li class="menu"><a class= "menu" href='#' onclick="Shop()">Shop</a>
-                            <ul id="untermenue">
-                                <li class="untermenu"><a class= "menu" href='#' onclick="Herren()">Herren</a></li>
-                                <li class="untermenu"><a class= "menu" href='#' onclick="Damen()">Damen</a></li>
-                            </ul>
+
                         </li>
                         <li class="menu"><a class= "menu" href='#' onclick="Profil()">Profil</a></li>
                     </ul>
                 </div>
 
-                <div style="float:right; display:block; overflow:hidden">
-                    <form action="javascript: Suche()" method="GET">
-                        <input size="100" name="Name" type="search" maxlength="255" placeholder="Nach Artikel suchen" />
+                <div style="float:right">
+                    <form action="" method="POST" onsubmit="Suche()">
+                        <input size="100" name="Name" type="search"  onkeyup="searchFor(this.value);" placeholder="Nach Artikel suchen"  />
+                        <input type="submit" value="Suchen"/>
+                        <div id="ergebnis"></div>
                     </form>
                 </div>                
             </div>
@@ -44,14 +49,11 @@
                 <div>
                     <!-- Login-Buttons -->
 
-                    <form action="login.php" method = "POST" style="text-align: left">
-                        <p><font color="#FFFFFF"> User: <input type="text" name="username" size="13">
-                            PW: <input type="password" name="pw" size="13"></font></p>
-                        <p><input type="submit" value="Submit"></p>
+                    <?php
+                    echo "Sie sind eingeloggt als:  " . $_SESSION["username"];
+                    echo "<br><a href='logout.php'>Ausloggen</a></br>"
+                    ?>
 
-                        <a href='#' onclick="Registration()">Registrieren</a>
-
-                    </form>  
                 </div>                
             </div>
             <div id="ausgabe">

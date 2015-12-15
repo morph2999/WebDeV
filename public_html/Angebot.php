@@ -23,7 +23,7 @@
                 mysql_select_db("parfum")
                         or die("Die Datenbank existiert nicht.");
 
-                $sqlcount = mysql_query("SELECT * FROM produkthe,produktda ORDER BY RAND() LIMIT 3");
+                $sqlcount = mysql_query("SELECT * FROM produkte ORDER BY RAND() LIMIT 3");
                 $count = 1;
                 $Rabatt = 48;
                 while ($spalte1 = mysql_fetch_array($sqlcount)) {
